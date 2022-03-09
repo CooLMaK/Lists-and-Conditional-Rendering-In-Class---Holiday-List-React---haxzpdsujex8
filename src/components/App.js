@@ -36,13 +36,14 @@ const App = ()=>{
     { name: 'Tirupati', country: 'India' },
     ]
    
-   const indianCity = cityList.filter((list)=>list.country==='India');
+   
    
    let count = 1;
-  for(let E of indianCity){
+  for(let E of cityList){
     E.id = `location${count}`;
     count++;
   }
+  const indianCity = cityList.filter((list)=>list.country==='India');
   console.log(indianCity)
    
     return (
