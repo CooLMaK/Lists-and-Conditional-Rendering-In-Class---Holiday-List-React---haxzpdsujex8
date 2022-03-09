@@ -36,20 +36,16 @@ const App = ()=>{
     { name: 'Tirupati', country: 'India' },
     ]
    
-   
-   
-   let count = 1;
-  for(let E of cityList){
-    E.id = `location${count}`;
-    count++;
-  }
-  const indianCity = cityList.filter((list)=>list.country==='India');
-  console.log(indianCity)
+  
    
     return (
       <div id="main">
         <ol>
-        {indianCity.map((names)=><li key={names.id}>{names.name}</li>)}
+          {
+            cityList.map((item, index)=>(
+              item.country==='India' && <li key={`location${index+1}`}>{item.name}</li>
+            ))
+          }
         </ol>
       </div>
     )
